@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Controle de gastos</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body class="centralize">
+    <form action="">
+        <div class="form-field">
+            <div><label for="email">Email</label></div>
+            <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="OnChangeEmail()">
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>
+        </div>
+        <div class="form-field">
+            <div><label for="password">Senha</label></div>
+            <input type="password" name="password" id="password" placeholder="Senha" onchange="OnChangePassword()">
+            <div class="error" id="password-required-error">Senha é obrigatória</div>
+            <div class="error" id="password-min-length-error">A senha deve ter pelo menos 6 caracteres</div>
+        </div>
+        <div class="form-field">
+            <div><label for="confirmPassword">Confirmar senha</label></div>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confrimar senha"
+                onchange="OnChangeConfirmPassword()">
+            <div class="error" id="password-doesnt-match-error">Senha e confirmar senha devem ser iguais</div>
+        </div>
+        <div><button type="button" class="solid" disabled="true" id="register-button"
+                onclick="Register()">Registrar</button></div>
+        <div><button type="button" class="clear">Login</button></div>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="../js/firebase-init.js"></script>
+    <script src="../js/register.js"></script>
+    <script src="../js/validations.js"></script>
+    <script src="../js/loading.js"></script>
+</body>
+
+</html>
